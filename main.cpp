@@ -1,37 +1,6 @@
-#include <stdio.h>
+//Continuando no método de OO, no arquivo main.cpp coloca-se apenas a função main(), desacoplando as outras estruturas do programa em diferentes arquivos
 
-struct Pessoa{
-    public://Identifica a visibilidade dos atributos e funções
-    //Como esses atributos são públicos, conseguem ser acessados fora da struct
-        int dia;
-        int mes;
-        int ano;
-        int idade;
-
-    //Função Construtora: Inicializa variáveis
-    //Vantagem: O código fica mais limpo
-    Pessoa (int dia, int mes, int ano){
-        this->dia = dia;
-        this->mes = mes;
-        this->ano = ano;
-        this->idade = -1;
-    }
-
-    //A struct além de armazenar os dados, armazena também a função, mais de acordo com os princípios da POO
-    void Calculo_Idade(int dia, int mes, int ano){
-        this->idade = ano - this->ano;
-    
-        if(this->mes > mes){
-            this->idade-=1;
-        }else{
-            if(this->mes == mes){
-                if(this->dia > dia){
-                    this->idade-=1;
-                }    
-            }
-        }
-    }
-};
+#include "Pessoa.h" //Deve-se incluir a biblioteca interna que contém as estruturas utilizadas na função main()
 
 
 int main(){
@@ -41,9 +10,9 @@ int main(){
     Einstein.Calculo_Idade(6, 2, 2023);
     Newton.Calculo_Idade(6, 2, 2023);
 
-    printf("A idade de Einstein seria %d \n", Einstein.idade);
-    printf("A idade de Newton seria %d \n", Newton.idade);
-    
+    printf("A idade de Einstein seria %d \n", Einstein.getIdade());
+    printf("A idade de Newton seria %d \n", Newton.getIdade());
+
     getchar();
     return 0;
 }
