@@ -51,3 +51,11 @@ void Pessoa::setUniversidadeFiliada(Universidade* universidadeFiliada){
 void Pessoa::localTrabalho(){
     cout << this->nome << " trabalha para " << universidadeFiliada->getNome() << endl;
 }
+
+void Pessoa::setDepartamento(Departamento* dpto){
+    this->dpto = dpto;
+}
+
+void Pessoa::departamentoTrabalho(){
+    cout << this->nome << " trabalha para " << universidadeFiliada->getNome() << " no departamento " << dpto->getNome() << endl;
+}

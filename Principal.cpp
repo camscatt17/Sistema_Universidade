@@ -20,7 +20,7 @@ Newton() //Chamando explicitamente a construtora sem parâmetro
     mes = st.wMonth;
     ano = st.wYear;
 
-    //Nesta parte, os objetos UTFPR e Simao são associados
+    //Nesta parte as classes Universidade e Pessoa são associados
     UTFPR.setNome("UTFPR");
     Cambridge.setNome("Cambridge");
     Princeton.setNome("Princeton");
@@ -28,6 +28,16 @@ Newton() //Chamando explicitamente a construtora sem parâmetro
     Simao.setUniversidadeFiliada(&UTFPR);
     Einstein.setUniversidadeFiliada(&Princeton);
     Newton.setUniversidadeFiliada(&Cambridge);
+
+    //Nesta parte os objetos Universidade e departamento são agregados
+    DAMAT.setNome("DAMAT");
+    DAFIS.setNome("DAFIS");
+    DAINF.setNome("DAINF");
+
+    UTFPR.setDepartamento(&DAINF);
+    Cambridge.setDepartamento(&DAFIS);
+    Princeton.setDepartamento(&DAMAT);
+    
 
     Executar();
 }
@@ -38,11 +48,14 @@ Principal::~Principal(){
 
 void Principal::Executar(){
     Simao.calculoIdade(dia, mes, ano);
-    Simao.localTrabalho();
+    //Simao.localTrabalho();
+    Simao.departamentoTrabalho();
 
     Einstein.calculoIdade(dia, mes, ano);
-    Einstein.localTrabalho();
+    //Einstein.localTrabalho();
+    Einstein.departamentoTrabalho();
 
     Newton.calculoIdade(dia, mes, ano);
-    Newton.localTrabalho();
+    //Newton.localTrabalho();
+    Newton.departamentoTrabalho();
 }

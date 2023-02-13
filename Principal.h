@@ -1,6 +1,7 @@
 #pragma once
 #include "Pessoa.h"
 #include "Universidade.h"
+#include "Departamento.h"
 
 class Principal{
     private:
@@ -11,6 +12,10 @@ class Principal{
         Universidade UTFPR;
         Universidade Cambridge;
         Universidade Princeton;
+
+        Departamento DAMAT;
+        Departamento DAFIS;
+        Departamento DAINF;
 
         int dia, mes, ano;
 

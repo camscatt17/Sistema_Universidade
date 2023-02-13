@@ -1,14 +1,18 @@
-#pragma once //Cabeçalho de Pré-processador/Pré-compilação, servindo pra tratar de includes repetidos
+#pragma once 
+#include "Departamento.h"
 
 
 class Universidade{
     private:
         char nome[30];
 
+        Departamento* dpto;
+
     public:
         Universidade();
         ~Universidade();
         void setNome(const char* nome);
         char* getNome();
+        void setDepartamento(Departamento* dpto);
 };
 
