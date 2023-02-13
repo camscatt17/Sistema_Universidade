@@ -5,11 +5,13 @@
 using namespace std;
 
 Principal::Principal():
+Simao(),
 Einstein(),
-Newton()//Chamando explicitamente a construtora sem parâmetro
+Newton() //Chamando explicitamente a construtora sem parâmetro
 {
-    Einstein.Inicializa(14, 03, 1879, "Einstein");
-    Newton.Inicializa(4, 1, 1643, "Newton");
+    Simao.Inicializa(3, 10, 1976, "Jean Simao");
+    Einstein.Inicializa(14, 3, 1879, "Albert Einstein");
+    Newton.Inicializa(4, 1, 1643, "Isaac Newton");
 
     //Recurso da biblioteca Windows.h que registra o dia, mes e ano atuais, de acordo com a data que o programa é compilado.
     SYSTEMTIME st;
@@ -17,6 +19,15 @@ Newton()//Chamando explicitamente a construtora sem parâmetro
     dia = st.wDay;
     mes = st.wMonth;
     ano = st.wYear;
+
+    //Nesta parte, os objetos UTFPR e Simao são associados
+    UTFPR.setNome("UTFPR");
+    Cambridge.setNome("Cambridge");
+    Princeton.setNome("Princeton");
+
+    Simao.setUniversidadeFiliada(&UTFPR);
+    Einstein.setUniversidadeFiliada(&Princeton);
+    Newton.setUniversidadeFiliada(&Cambridge);
 
     Executar();
 }
@@ -26,6 +37,12 @@ Principal::~Principal(){
 }
 
 void Principal::Executar(){
-    Einstein.Calculo_Idade(dia, mes, ano);
-    Newton.Calculo_Idade(dia, mes, ano);
+    Simao.calculoIdade(dia, mes, ano);
+    Simao.localTrabalho();
+
+    Einstein.calculoIdade(dia, mes, ano);
+    Einstein.localTrabalho();
+
+    Newton.calculoIdade(dia, mes, ano);
+    Newton.localTrabalho();
 }

@@ -1,9 +1,16 @@
+#pragma once
 #include "Pessoa.h"
+#include "Universidade.h"
 
 class Principal{
     private:
+        Pessoa Simao;
         Pessoa Einstein;
         Pessoa Newton;
+
+        Universidade UTFPR;
+        Universidade Cambridge;
+        Universidade Princeton;
 
         int dia, mes, ano;
 

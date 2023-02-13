@@ -20,7 +20,7 @@ void Pessoa::Inicializa(int dia, int mes, int ano, const char* nome){
     strcpy(this->nome, nome);
 }
 
-void Pessoa::Calculo_Idade(int dia, int mes, int ano){
+void Pessoa::calculoIdade(int dia, int mes, int ano){
     this->idade = ano - this->ano;
     
     if(this->mes < mes){
@@ -42,4 +42,12 @@ void Pessoa::printIdade(){
 
 int Pessoa::getIdade(){
     return this->idade;
+}
+
+void Pessoa::setUniversidadeFiliada(Universidade* universidadeFiliada){
+    this->universidadeFiliada = universidadeFiliada;
+}
+
+void Pessoa::localTrabalho(){
+    cout << this->nome << " trabalha para " << universidadeFiliada->getNome() << endl;
 }
