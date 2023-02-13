@@ -1,4 +1,4 @@
-
+//Duas boas práticas de programação em c++: Crie uma construtora sem parâmetro e tenha controle do que tem lá
 #include <iostream>
 #include <stdio.h>
 
@@ -8,9 +8,9 @@ class Pessoa{
         char nome[30];
 
     public:
-    //As funções de uma classe são chamadas de métodos ou ainda operações
-    //A extensão .h passa a armazenar apenas as definições dos métodos
+    Pessoa();//Contrutora sem parâmetros, sendo que toda classe deve ter uma função membro construtora sem parâmetro
     Pessoa(int dia, int mes, int ano, const char* nome);
+    void Inicializa(int dia, int mes, int ano, const char* nome = "");
     void Calculo_Idade(int dia, int mes, int ano);
     void printIdade();
     int getIdade();
