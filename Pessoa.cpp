@@ -1,12 +1,8 @@
-//A classe pode ser dividida em .h e .cpp a título de organização
-//O arquivo .cpp armazena as definições dos métodos declarados na extensão .h da classe
-
-#include "Pessoa.h" //Quando um arquivo inclui outro, significa que este arquivo está implementando o arquivo incluído
+#include "Pessoa.h"
 #include <string.h>
 #include <iostream>
 
-using std::cout;
-using std::endl;
+using namespace std;
 
 Pessoa::Pessoa(int dia, int mes, int ano, const char* nome){
         this->dia = dia;
@@ -29,7 +25,11 @@ void Pessoa::Calculo_Idade(int dia, int mes, int ano){
             }
         }
 
-        cout << "A idade de " << this->nome << " seria " << this->idade << endl; //O cout é um comando que trabalha orientado a fluxo
+        printIdade();//Aplicando o desacoplamento
+}
+
+void Pessoa::printIdade(){
+    cout << "A idade de " << this->nome << " seria " << this->idade << endl; //O cout é um comando que trabalha orientado a fluxo
 }
 
 int Pessoa::getIdade(){
